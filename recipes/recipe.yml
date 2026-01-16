@@ -12,6 +12,23 @@ image-version: 42 # latest is also supported if you want new updates ASAP
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
+  # use firefox flatpak instead
+  - type: dnf
+    remove:
+      packages:
+        # example: removing firefox (in favor of the flatpak)
+        # "firefox" is the main package, "firefox-langpacks" is a dependency
+        - firefox
+        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+
+  # add system tools
+  - type: dnf
+    install:
+      packages:
+        - fish
+        - ncdu
+        - ranger
+
   - type: files
     files:
       - source: system
@@ -23,15 +40,8 @@ modules:
         - atim/starship
     install:
       packages:
-        - fish
         - micro
         - starship
-    remove:
-      packages:
-        # example: removing firefox (in favor of the flatpak)
-        # "firefox" is the main package, "firefox-langpacks" is a dependency
-        - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
   - type: default-flatpaks
     configurations:
