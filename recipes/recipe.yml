@@ -51,4 +51,8 @@ modules:
         install: # system flatpaks we want all users to have and not remove
           - org.mozilla.firefox
 
+  - type: script
+    scripts:
+      - kde-setup.py
+
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
