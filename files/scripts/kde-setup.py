@@ -14,7 +14,6 @@ PathLike: TypeAlias = Path | str | os.PathLike
 ENCODING = "UTF-8"
 
 KDE_CONF_DIR = Path("/usr/share/kde-settings/kde-profile/default")
-KDE_CONF_DIR = Path("/home/fnrir/Desktop/kdefault")
 
 
 def eprint(*args: object):
