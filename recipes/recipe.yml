@@ -43,6 +43,10 @@ modules:
         - micro
         - starship
 
+  - type: script
+    scripts:
+      - vscode-install.sh
+
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
