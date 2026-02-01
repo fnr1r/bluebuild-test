@@ -20,6 +20,13 @@ modules:
         - ncdu
         - ranger
 
+  - type: akmods
+    base: main
+    install:
+      - framework-laptop
+      - v4l2loopback
+      - zfs
+
   - type: files
     files:
       - source: system
