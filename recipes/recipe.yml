@@ -25,7 +25,6 @@ modules:
     install:
       - framework-laptop
       - v4l2loopback
-      - zfs
 
   - type: files
     files:
